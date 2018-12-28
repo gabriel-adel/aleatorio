@@ -15,9 +15,9 @@ score=0 #cria um score 0
 
 for w in sorted(ltcount, key=ltcount.get, reverse=True):#ordena as letras do maior para o menor.
 	print w,ltcount[w] # mostra a letra e o numero do index 
-	order.append(w) #acrescenta w que e a variavel da ordenação
+	order.append(w) #lista order abruga a quantidade de vezes que a letra a parece no texto. ele cria uma lista semelhante a enfreq mas usando o texto como base. 
 
-order = ''.join(order)#conta vazio.order terminar video aula 
+order = ''.join(order)#justa cada item da lista order formando uma string
 
 for clt in enfreq[:6]:#conta se as 6 primeiras letras do enfreq 'etaoin' aparecem em sequencia de frequencia. 
 	if clt in order[:6]:
