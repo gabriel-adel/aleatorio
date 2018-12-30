@@ -1,22 +1,37 @@
+
 import sys
+
 from string import lowercase as  lc
 
 file = open(sys.argv[1],'r').read().lower()
-key = sys.argv[2]
+
+key = int(sys.argv[2])
+
 mode = sys.argv[3]
 
+file2 = open(sys.argv[4],'w')
 result = ''
 
 for lt in file:
+	
 	if lt in lc:
 		idx=lc.find(lt)
+		
 		if mode == 'enc':
-			idx=(idx+key)%26
+			idx = ( idx + key) % 26
+		
 		elif mode == 'dec':
-			idx=(idx-key)%26
+			idx = (idx - key) % 26
+		
+	
 		result += lc[idx]
 	else:
 		result+=lt 
+	
+if save == 's':
+	file2.write(result)
+else:
+	print result
 
-print result,
+
 
